@@ -33,11 +33,14 @@ Solution Code is given in `code.c` file.
 12. If everything executes without errors, the program ends by returning 0, indicating successful execution.
 
 ### How To Run ?
-* Use *cd folder name* to redirect to folder
-* Use *cc code.c* to compile file
-* Use *./a.out* to run code
-* **note : all commands must be run in ubuntu ar any linux terminal**
-``` hello
+* Use bellow code  to redirect to folder
+  ``` cd foldername
+* Use bellow code to compile file
+  ``` cc code.c
+* Use bellow code to run code
+  ``` ./a.out
+  `note : all commands must be run in ubuntu ar any linux terminal`
+
   
 
 
