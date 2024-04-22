@@ -37,6 +37,7 @@ Solution Code is given in `code.c` file.
 * Use *cc code.c* to compile file
 * Use *./a.out* to run code
 * **note : all commands must be run in ubuntu ar any linux terminal**
+``` hello
   
 
 
