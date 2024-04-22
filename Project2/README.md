@@ -34,11 +34,14 @@ Solution Code is given in `code.c` file.
 
 ### How To Run ?
 * Use bellow code  to redirect to folder
-  ``` cd foldername ```
+  ```
+  cd foldername 
 * Use bellow code to compile file
-  ``` cc code.c ```
+  ```
+   cc code.c 
 * Use bellow code to run code
-  ``` ./a.out```
+  ```
+  ./a.out
   `note : all commands must be run in ubuntu ar any linux terminal`
 
   
