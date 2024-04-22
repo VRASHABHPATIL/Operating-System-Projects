@@ -1,47 +1,37 @@
 ## TITLE : DIRECTORY LINEAR SEARCH FOR FILE NAME. 
 
-
-### Introduction
-Linux environment has several open challenges that need contribution from the users. The contribution can be on several aspects of design, writing, organizing, code, testing, patch, bug fixing etc. The list of challenges can be found on several forums of the Linux pages . There are many communities like Open Source Friday which aggregate and manage open course projects providing a channel for contribution management. The task here for the students is that, in a team of 3 to 4, each team will identify an open challenge related to operating system or its application and contribute to it towards improvising functionality. While modern operating systems have several challenges, the contribution can be on any of the aspects from design to testing.
-
 ### Problem statement
-Develop a program to create a backup of files from a source directory to a backup directory. The program takes two directory paths, ‘sourceDirectory’ and ‘backupDirectory,’ as input and performs the following tasks:Create a backup directory with the path specified in ‘backupDirectory.’Copy all the files and subdirectories from the ‘sourceDirectory’ to the backup directory.
+The program performs an efficient linear search on a given directory to find a specific file using system calls to interact with the file system and directory entries. The linear  search algorithm ensures a quick search process, making it ideal for large directories. Upon completion, the program provides appropriate output based on whether the specified 
+name is present in the directory or not.
 
 ### Solution
 Solution Code is given in **code.c** file.
 
 ### Flow of the code
-1.The program starts by defining the source and backup directories as strings (sourceDirectory and backupDirectory).
+1. The program starts by including necessary header files and defining the function `search_by_filename`.
 
-2.It then constructs a command to create the backup directory using sprintf() to format the command with the backupDirectory path and save it in the backupCommand string.
+2. The `search_by_filename` function is defined to search for a given filename in the specified directory. It takes the filename as input and opens the directory specified by the `directory` variable.
 
-3.The system() function is used to execute the backupCommand, which creates the backup directory using the terminal command mkdir -p. The -p flag ensures that the directory is created even if the parent directories don’t exist.
+3. Inside the `search_by_filename` function, the `opendir` system call is used to open the directory specified by `directory`. If it fails to open the directory, the function returns -1 to indicate an error.
 
-4.The program checks the return value of system() (stored in backupResult) to verify if the backup directory was created successfully. A return value of 0 indicates success, and any nonzero value indicates an error. If there was an 
-  error, the program prints a corresponding error message and returns 1 to indicate failure.
+4. The function then uses a loop to iterate through each entry in the directory using the `readdir` system call. For each entry, it compares the entry's filename with the provided filename using the `strcmp` function. If a match is found, the function returns 1 to indicate that the file is found.
 
-5.Next, the program constructs a command to copy files from the source directory to the backup directory using sprintf() and saves it in the same backupCommand string.
+5. If the loop completes without finding the filename, the directory stream is closed using the `closedir` system call, and the function returns 0 to indicate that the file is not found.
 
-6.The system() function is used again to execute the backupCommand, which performs the file copy operation using the terminal command cp -r.
+6. In the `main` function, the program checks if the number of command-line arguments is correct. If it's not, a usage message is displayed, and the program returns with an error code.
 
-7.The program checks the return value of system() (stored in backupCopyResult) to verify if the backup was completed successfully. A return value of 0 indicates success, and any nonzero value indicates an error. If there was an error, 
-  the program prints a corresponding error message and returns 1 to indicate failure.
+7. If the correct number of arguments is provided, the program calls the `search_by_filename` function with the filename provided as a command-line argument (`argv[1]`).
 
-8.If both the backup directory creation and file copy operations were successful, the program returns 0 to indicate successful execution.
+8. The `search_by_filename` function returns the result of the search (1 if the file is found, 0 if not, or -1 in case of an error), and this result is stored in the variable `found`.
 
-### Advantages
-1.Simple and straightforward: The code is relatively simple and easy to understand, making it accessible to developers of various skill levels.
+9. The program then checks the value of `found` to determine the appropriate output. If `found` is -1, it means there was an error opening the directory, so a corresponding error message is displayed. If `found` is 0, it means the file was not found, and a message indicating that the file is not found is displayed.
 
-2.Platform independence: The code uses standard C libraries, which means it can run on multiple platforms without modification.
+10. If `found` is 1, it means the file is found, and a message saying "File found. Opening the file..." is displayed. The program then proceeds to construct a command using the `snprintf` function to open the file in another window (specific to Linux using `xdg-open` command).
 
-3.Error handling: The code checks the return values of system calls to handle errors during the directory creation and file backup processes.
+11. The constructed command is executed using the `system` function. If the command execution returns an error (non-zero value), an error message "Error opening the file" is displayed, and the program returns with an error code.
 
-4.Backup automation: The code automatically creates the backup directory and copies the files from the source directory to the backup directory, providing an automated backup solution
+12. If everything executes without errors, the program ends by returning 0, indicating successful execution.
 
-### Disadvantages
-1.Lack of input validation: The code does not validate the input directories (sourceDirectory and backupDirectory) or check if they exist before performing operations on them. This can lead to unintended consequences or errors if the input directories are invalid.
-
-2.Fixed buffer size: The backupCommand buffer has a fixed size of 1000, which may not be sufficient for very long directory paths or command strings. This can lead to buffer overflow issues if the constructed command exceeds the buffer size.
 ### How To Run ?
 * Use *cd folder name* to redirect to folder
 * Use *cc code.c* to compile file
