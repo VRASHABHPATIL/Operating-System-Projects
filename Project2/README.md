@@ -42,7 +42,7 @@ Solution Code is given in `code.c` file.
 * Use bellow code to run code
   ```
   ./a.out
-  `note : all commands must be run in ubuntu ar any linux terminal`
+`note : all commands must be run in ubuntu ar any linux terminal`
 
   
 
