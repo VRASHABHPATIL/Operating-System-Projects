@@ -5,7 +5,7 @@ The program performs an efficient linear search on a given directory to find a s
 name is present in the directory or not.
 
 ### Solution
-Solution Code is given in **code.c** file.
+Solution Code is given in `code.c` file.
 
 ### Flow of the code
 1. The program starts by including necessary header files and defining the function `search_by_filename`.
