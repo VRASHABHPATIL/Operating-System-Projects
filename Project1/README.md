@@ -40,7 +40,18 @@ Solution Code is given in **code.c** file.
 1.Lack of input validation: The code does not validate the input directories (sourceDirectory and backupDirectory) or check if they exist before performing operations on them. This can lead to unintended consequences or errors if the input directories are invalid.
 
 2.Fixed buffer size: The backupCommand buffer has a fixed size of 1000, which may not be sufficient for very long directory paths or command strings. This can lead to buffer overflow issues if the constructed command exceeds the buffer size.
+
 ### How To Run ?
+* Use bellow code  to redirect to folder
+  ```
+  cd foldername 
+* Use bellow code to compile file
+  ```
+   cc code.c 
+* Use bellow code to run code
+  ```
+  ./a.out
+`note : all commands must be run in ubuntu ar any linux terminal`
 * Use *cd folder name* to redirect to folder
 * Use *cc code.c* to compile file
 * Use *./a.out* to run code
