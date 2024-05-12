@@ -6,7 +6,7 @@
 
 * A key function of the OS is file system management, organizing data into a hierarchical structure and providing mechanisms for storage and retrieval. Additionally, the OS often includes a user interface, enabling users to interact with the system through command-line interfaces, graphical user interfaces (GUIs), or a combination of both. Over the decades, operating systems have evolved to support diverse computing environments, from single-user desktops to massive distributed systems. 
 
-* This evolution has been driven by advancements in hardware technology, user requirements, and emerging computing paradigms. Today, operating systems continue to innovate, embracing trends such as virtualization, containerization, and cloud computing to meet the demands of an ever-changing digital landscape.
+This evolution has been driven by advancements in hardware technology, user requirements, and emerging computing paradigms. Today, operating systems continue to innovate, embracing trends such as virtualization, containerization, and cloud computing to meet the demands of an ever-changing digital landscape.
 
 
 
